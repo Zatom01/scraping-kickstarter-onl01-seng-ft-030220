@@ -25,7 +25,8 @@ def create_project_hash
   #location-name 
   project.css("span.location-name").text
   
-  
+  @percent funded
+  project.css("ul.project-stats li.first.funded strong").text
   
   
 end
