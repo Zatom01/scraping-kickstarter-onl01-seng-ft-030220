@@ -2,7 +2,9 @@ require 'nokogiri'
 
 def create_project_hash
   
-  @@projects= Hash.new()
+  @@all=[]
+  
+  html=File.read()
   
   
   
