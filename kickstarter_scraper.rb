@@ -1,24 +1,6 @@
 require 'nokogiri'
 require 'pry'
 
-def create_project_hash
-  
-  html=File.read('fixtures/kickstarter.html')
-  
-  kickstarter = Nokogiri::HTML(html)
-  
-  projects={}
-  
-  #iterate through the projects 
-  kickstarter.css("li.project.grid_4").each do |project|
-    title=project.css
-    projects[project]={}
-  end 
-  
-  #returns the projects hash 
-  projects 
-end 
-  
   #projects:
   kickstarter.css("li.project.grid_4").first
   
@@ -39,6 +21,26 @@ end
   
   #removes percentage sign and converts into integer 
   project.css("ul.project-stats li.first.funded strong").text.gsub("%","")
+
+def create_project_hash
+  
+  html=File.read('fixtures/kickstarter.html')
+  
+  kickstarter = Nokogiri::HTML(html)
+  
+  projects={}
+  
+  #iterate through the projects 
+  kickstarter.css("li.project.grid_4").each do |project|
+    title=project.css("h2.bbcard_name strong a").text
+    projects[title.to_sym]={}
+  end 
+  
+  #returns the projects hash 
+  projects 
+end 
+  
+  
   
   
 end
