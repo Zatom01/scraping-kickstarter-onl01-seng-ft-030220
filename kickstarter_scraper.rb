@@ -1,26 +1,26 @@
 require 'nokogiri'
 require 'pry'
 
-  #projects:
-  kickstarter.css("li.project.grid_4").first
+  # #projects:
+  # kickstarter.css("li.project.grid_4").first
   
-  #gives the title of the project
-  project.css("h2.bbcard_name strong a").text
+  # #gives the title of the project
+  # project.css("h2.bbcard_name strong a").text
   
-  #gives the project MOBY DICK thumbnail link 
-  project.css("div.project-thumbnail a img").attribute("src").value
+  # #gives the project MOBY DICK thumbnail link 
+  # project.css("div.project-thumbnail a img").attribute("src").value
   
-  #description
-  project.css("p.bbcard_blurb").text
+  # #description
+  # project.css("p.bbcard_blurb").text
   
-  #location-name 
-  project.css("span.location-name").text
+  # #location-name 
+  # project.css("span.location-name").text
   
-  #percent funded
-  project.css("ul.project-stats li.first.funded strong").text
+  # #percent funded
+  # project.css("ul.project-stats li.first.funded strong").text
   
-  #removes percentage sign and converts into integer 
-  project.css("ul.project-stats li.first.funded strong").text.gsub("%","")
+  # #removes percentage sign and converts into integer 
+  # project.css("ul.project-stats li.first.funded strong").text.gsub("%","")
 
 def create_project_hash
   
