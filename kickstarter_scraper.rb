@@ -25,8 +25,11 @@ def create_project_hash
   #location-name 
   project.css("span.location-name").text
   
-  @percent funded
+  #percent funded
   project.css("ul.project-stats li.first.funded strong").text
+  
+  #removes percentage sign and converts into integer 
+  project.css("ul.project-stats li.first.funded strong").text.gsub("%","")
   
   
 end
